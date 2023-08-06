@@ -1,0 +1,110 @@
+.container01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #CDCDCD;
+    height: 100vh;
+}
+
+.container02 {
+    margin-top: 60px;
+    width: 918px;
+    height: 442px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #C9B133;
+}
+
+.container03 {
+    margin-top: 12px;
+    margin-left: 12px;
+    width: 894px;
+    height: 418px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #CDCDCD;
+}
+
+.container04 {
+    margin-left: 340px;
+    width: 208px;
+    margin-bottom: 240px;
+    height: 168px;
+    border-radius: 40px;
+    background: #C9B133;
+    position: absolute;
+    margin-top: -110px;
+}
+
+.container05 {
+    position: absolute;
+    width: 186px;
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #CDCDCD;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.container06 {
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -50px;
+}
+
+.container07 {
+    height: 200%;
+    width: 120%;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.login-formulario {
+    position: absolute;
+    margin-left: -150px;
+    margin-top: 25px;
+
+}
+
+.login-formulario input[type="text"]{
+    width: 130%;
+    padding: 12px;
+    padding-left: 50px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-image: url('../../assets/img/user.png'); 
+    background-repeat: no-repeat;
+    background-position: 20px center; 
+    background-size: 15px;
+}
+
+.login-formulario input[type="password"] {
+    width: 130%;
+    padding: 12px;
+    padding-left: 50px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-image: url('../../assets/img/key.png');
+    background-repeat: no-repeat;
+    background-position: 20px center; 
+    background-size: 15px;
+}
+
+.login-formulario button {
+    position: absolute;
+    color: white;
+    border: none;
+    padding: 14px 242px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 18px;
+    background-color: var(--button-background-color); 
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////// */

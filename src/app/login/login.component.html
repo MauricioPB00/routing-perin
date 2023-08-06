@@ -1,0 +1,20 @@
+<div class="container01">
+    <div class="container02">
+        <div class="container03">
+            <div class="container04">
+                <div class="container05">
+                    <div class="container06">
+                        <img class="container07" src="../../assets/img/Perin.png">
+                        <div class="login-formulario">
+                            <form (submit)="onSubmit()">
+                                <input type="text" id="username" name="username" [(ngModel)]="loginData.username" required>
+                                <input type="password" id="password" name="password" [(ngModel)]="loginData.password" required>
+                                <button type="submit" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">LOGAR</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
