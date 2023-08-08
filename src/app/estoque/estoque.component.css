@@ -42,14 +42,15 @@
     border: none;
     margin-left: 10px;
     margin-top: 0px;
+    outline: none;
 }
 
 .container04 img {
-width: 3%;
-height: 30%;
-filter: invert(100%);
-margin-top: 45px;
-margin-left: 50px;
+    width: 3%;
+    height: 30%;
+    filter: invert(100%);
+    margin-top: 45px;
+    margin-left: 50px;
 }
 
 input[type="text"]::placeholder {

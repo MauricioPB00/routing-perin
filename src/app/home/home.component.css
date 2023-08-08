@@ -111,7 +111,7 @@
 
 /* BORDA DO BOTAO DA IMAGEM */
 .container03 button {
-  background: #b99f1d;
+  background: transparent;
   border: none;
   padding: 8px;
   border-radius: 18px;
@@ -131,7 +131,9 @@
   margin-left: -450px;
   height: 100%;
   width: 133%;
-  background: #c0bfb7;
+  /* background: #c0bfb7; */
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
 }
 .container04 p {
   color: #FFF;
