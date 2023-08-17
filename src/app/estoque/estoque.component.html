@@ -35,19 +35,27 @@
             </div>
         </div>
     </div>
-    <div class="container05">
-        <div class="container06">
-            <form action="form" class="form">
-                <div class="input-wrapper">
-                    <input type="text" name="id" id="id1" placeholder="NOME">
-                    <input type="text" name="id" id="id2" placeholder="TAMANHO">
-                </div>
-                <div class="input-wrapper">
-                    <input type="text" name="id" id="id3" placeholder="VALOR">
-                    <input type="text" name="id" id="id4" placeholder="ID">
-                </div>
-            </form>
-            <img src="..//../assets/img/adicionar.png" alt="img" class="img">
-        </div>
+    <div class="container03">
+        <button type="submit" id="openModalButton" (click)="abrirModal()">
+            <img src="../../assets/img/adicionar.png" alt="adicionar">
+        </button>
     </div>
 </div>
+
+<div id="modal" class="modal" *ngIf="modalVisible">
+    <div class="modal-content">
+      <span class="close" id="closeModalButton" (click)="fecharModal()">
+        <img src="../../assets/img/adicionar.png" alt="Fechar">
+      </span>
+      <div class="input-container">
+        <input type="text" class="input-field">
+        <input type="text" class="input-field">
+      </div>
+      <div class="input-container">
+        <input type="text" class="input-field">
+        <input type="text" class="input-field">
+      </div>
+      <button class="buttonOKmodal">OK</button>
+    </div>
+  </div>
+  
