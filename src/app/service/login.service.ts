@@ -1,4 +1,5 @@
 
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -16,7 +17,6 @@ export class LoginService {
     console.log('chego');
     const url = `${this.baseUrl}/login`; 
 
-    
     const loginData = {
       username,
       password
