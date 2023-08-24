@@ -9,14 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { EstoqueComponent } from './estoque/estoque.component'; 
+import { StoreComponent } from './store/store.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    EstoqueComponent
+    StoreComponent
   ],
   imports: [
     BrowserModule,

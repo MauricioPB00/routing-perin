@@ -38,7 +38,7 @@ export class LoginComponent {
       this.loginService.login(this.loginData.username, this.loginData.password).subscribe(
         (response) => {
           console.log('Resposta do servidor:', response);
-          //this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
         },
         (error) => {
           console.error('Erro ao fazer a chamada para o servidor:', error);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  onSubmit() {
+  @ViewChild('inputField') inputField: ElementRef; // Decorador ViewChild para acessar o elemento de entrada
 
+  onSubmit() {
+    const inputValue = this.inputField.nativeElement.value; // Obtém o valor do campo de entrada
+    console.log("Valor do campo de entrada:", inputValue); // Registra o valor no console
   }
 }
