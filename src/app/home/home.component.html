@@ -18,7 +18,7 @@
                 </a>
             </div>
             <div class="a1">
-                <a href="/home"><img src="../../assets/img/do-utilizador.png" alt="" class="casa">
+                <a href="/customer"><img src="../../assets/img/do-utilizador.png" alt="" class="casa">
                     <p class="a01">CLIE</p>
                 </a>
             </div>
@@ -36,14 +36,55 @@
         </div>
     </div>
     <div class="container03">
-        <form (submit)="onSubmit()">
-          <input type="text" #inputField> <!-- Adicione #inputField aqui -->
-          <button type="submit">
-            <img src="../../assets/img/busca.png" alt="Buscar">
-          </button>
+        <form>
+            <input type="text" [(ngModel)]="searchId" name="searchId"  required>
+            <button type="button" (click)="onSubmit()"> <!-- Use (click) para chamar onSubmit() -->
+                <img src="../../assets/img/busca.png" alt="Buscar">
+            </button>
         </form>
+
         <div class="container04">
-          <p class="p-grid">12312 - iwjeiawjei jea eawiejia - 160</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Tamanho</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let result of searchResults">
+                        <td>{{ result.id }}</td>
+                        <td>{{ result.name }}</td>
+                        <td>{{ result.price }}</td>
+                        <td>{{ result.size }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
+        
+        
+        <!-- <div class="container04">
+            <table>
+                <tr *ngFor="let item of searchResult; let isFirst = first">
+                    <td>ID: {{ item.id }}</td>
+                    <td>Nome: {{ item.name }}</td>
+                    <td>Preço: {{ item.price }}</td>
+                    <td>Tamanho: {{ item.size }}</td>
+                    <td *ngIf="isFirst">Resultado Atual</td>
+                </tr>
+                <tr *ngFor="let historyItem of searchHistory">
+                    <td>ID: {{ historyItem.id }}</td>
+                    <td>Nome: {{ historyItem.name }}</td>
+                    <td>Preço: {{ historyItem.price }}</td>
+                    <td>Tamanho: {{ historyItem.size }}</td>
+                    <td>Histórico</td>
+                </tr>
+            </table>
+        </div> -->
+        
+        
+        
+    </div>
 </div>

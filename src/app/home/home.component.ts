@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { HomeService } from '../service/home.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,20 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  @ViewChild('inputField') inputField: ElementRef; // Decorador ViewChild para acessar o elemento de entrada
+  searchId: string = '';
+  searchResults: any[] = []; // Usamos "searchResults" em vez de "searchResult"
+
+  constructor(private homeService: HomeService) { }
 
   onSubmit() {
-    const inputValue = this.inputField.nativeElement.value; // Obtém o valor do campo de entrada
-    console.log("Valor do campo de entrada:", inputValue); // Registra o valor no console
+    if (!this.searchId) {
+      return;
+    }
+    console.log(`ID recebido do HTML: ${this.searchId}`);
+
+    this.homeService.getDadosDoSearch(this.searchId).subscribe(data => {
+      this.searchResults.push(data); // Adicionamos o resultado à matriz
+    });
   }
 }
+

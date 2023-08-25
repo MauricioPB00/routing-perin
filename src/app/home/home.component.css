@@ -82,20 +82,21 @@
 
 .container03 {
   margin-top: 50px;
-  margin-left: 500px;
-  flex: 2;
+  flex: 1;
   display: block;
+
 }
 
 /*  TAMANHO DA BUSCA */
 .container03 form {
   display: flex;
   background: #C9B133;
-  align-items: center;
   border-radius: 25px;
   padding: 5px 10px;
-  width: 50%;
   height: 35px;
+  width: 50%;
+  margin-left: 350px;
+
 }
 
 /* INPUT DA BUSCA */
@@ -128,18 +129,44 @@
 /* ///////////////////////////////////////////////////////////////////////////////// */
 .container04 {
   margin-top: 30px;
-  margin-left: -450px;
-  height: 100%;
-  width: 133%;
-  /* background: #c0bfb7; */
-  background: rgba(0,0,0,0.04);
-  border-radius: 8px;
-}
-.container04 p {
-  color: #FFF;
-  font-family: OSWALD;
-  font-size: 25px;
-  padding-left: 40px;
-  padding-top: 20px;
 
+  /* background: #c0bfb7; */
+  border-radius: 8px;
+  justify-content: center;
+  display: flex;
+}
+
+/*////////////////////////////////////////*/
+/* Estilo para a tabela */
+table {
+
+  width: 90%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+
+}
+
+/* Estilo para as células do cabeçalho */
+th {
+    color: white;
+  background: #C9B133;
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ab963b;
+}
+
+/* Estilo para as células dos dados */
+td {
+  padding: 8px;
+  border: 1px solid #ab963b;
+}
+
+/* Estilo para linhas ímpares */
+tr:nth-child(odd) {
+  background-color: #dcdcdc;
+}
+
+/* Estilo para linhas pares */
+tr:nth-child(even) {
+  background-color: #cccccc;
 }

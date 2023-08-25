@@ -1,0 +1,170 @@
+@font-face {
+  font-family: RADIO;
+  src: url(../../assets/RADIO.otf);
+  font-family: LEAGUE;
+  src: url(../../assets/LeagueSpartan-Bold.otf);
+  font-family: OSWALD;
+  src: url(../../assets/Oswald-VariableFont_wght.ttf);
+  /* font-family: SIMP;
+    src: url(../../assets/SimplyMono-Bold.ttf);
+    font-family: MONSTER;
+    src: url(../../assets/Montserrat-Bold.otf); */
+}
+
+
+.container01 {
+  display: flex;
+  background: #CDCDCD;
+  height: 100vh;
+}
+
+.container02 {
+  width: 228px;
+  height: max-content;
+  flex-shrink: 0;
+  background: #C9B133;
+}
+
+.container02 h1 {
+  color: #FFF;
+  font-family: OSWALD;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.container025 {
+  width: 228px;
+  height: 1080px;
+  flex-shrink: 0;
+  margin-top: 120px;
+}
+
+.container025 a {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-decoration: none;
+}
+
+.container025 p {
+  color: #FFF;
+  font-family: OSWALD;
+  font-size: 25px;
+  padding-right: 10px;
+
+}
+
+.a1 {
+  margin-left: 40px;
+  display: flex;
+  margin-bottom: -10px;
+}
+
+.a01 {
+  margin-left: 10px;
+}
+
+.casa {
+  margin-top: 30px;
+  width: 14%;
+  height: 100%;
+  margin-left: 15px;
+  filter: invert(100%);
+}
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+.container03 button {
+  width: 9%;
+  height: 5%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 0;
+  display: inline-block;
+  float: left;
+}
+
+.container03 button img {
+  width: 40%;
+  filter: invert(100%);
+}
+
+
+/* modal */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #c0c0c0;
+  width: calc(100% - 228px); 
+  margin-left: 390px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  left: 274px; 
+  cursor: pointer;
+}
+
+.close img {
+  width: 55px; 
+  height: 55px;
+  filter: invert(100%);
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: calc(50% - 60px); 
+  padding: 8px;
+  border: 1px solid #c0c0c0;
+  margin-left: 30px; 
+  margin-right: 30px; 
+}
+
+.buttonmodal {
+  background-color: #12d815;
+  border: none;
+  font-size: 14px; 
+  color: #fff;
+  padding: 8px; 
+  width: calc(100% - 60px); 
+  margin-top: auto;
+  margin-left: 30px; 
+  margin-right: 30px; 
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */

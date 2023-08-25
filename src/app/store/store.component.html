@@ -1,97 +1,89 @@
 <div class="container01">
-    <div class="container02">
-        <h1>ESTO</h1>
-        <div class="container025">
-            <div class="a1">
-                <a href="/home"><img src="../../assets/img/casa.png" alt="" class="casa">
-                    <p class="a01">HOME</p>
-                </a>
-            </div>
-            <div class="a1">
-                <a href="/home"><img src="../../assets/img/seta-do-carrinho-para-baixo.png" alt="" class="casa">
-                    <p class="a01">COND</p>
-                </a>
-            </div>
-            <div class="a1">
-                <a href="/store"><img src="../../assets/img/caixa.png" alt="" class="casa">
-                    <p class="a01">ESTO</p>
-                </a>
-            </div>
-            <div class="a1">
-                <a href="/home"><img src="../../assets/img/do-utilizador.png" alt="" class="casa">
-                    <p class="a01">CLIE</p>
-                </a>
-            </div>
-            <div class="a1">
-                <a href="/home"><img src="../../assets/img/lado-do-caminhao.png" alt="" class="casa">
-                    <p class="a01">FORN</p>
-                </a>
-            </div>
-            <div class="a1">
-                <a href="/home"><img src="../../assets/img/saco-de-dolar.png" alt="" class="casa">
-                    <p class="a01">FATU</p>
-                </a>
-
-            </div>
-        </div>
-    </div>
-    <div class="container03"style="width: 100%;" >
-        <button type="submit" id="openModalButton" (click)="abrirModal()" *ngIf="!modalVisible">
-            <img src="../../assets/img/adicionar.png" alt="adicionar">
-          </button>
-          
-          
-          
-          <table class="table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Preço</th>
-                <th>Tamanho</th>
-                <th>Quantidade</th> <!-- Adiciona uma coluna para exibir a quantidade de itens -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of storeData">
-                <td>{{ item.id }}</td>
-                <td>{{ item.name }}</td>
-                <td>R$ {{ item.price }}</td>
-                <td>{{ item.size }}</td>
-                <td>{{ itemQuantities[item.id] || 0 }}</td> <!-- Exibe a quantidade de itens com base no ID -->
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="2"></td>
-                <td>R$ {{ totalPrice }}</td>
-                <td colspan="1"></td>
-                <td>{{ totalQuantity }}</td> 
-              </tr>
-              
-
-            </tfoot>
-          </table>  
-
-    </div>
-</div>
-<div *ngIf="modalVisible">
-    <div id="modal" class="modal" *ngIf="modalVisible">
-      <div class="modal-content">
-        <span class="close" id="closeModalButton" (click)="fecharModal()">
-          <img src="../../assets/img/adicionar.png" alt="Fechar">
-        </span>
-        <div class="input-container">
-          <input type="text" class="input-field" [(ngModel)]="nextId" placeholder="ID" [readonly]="true">
-          <input type="text" class="input-field" [(ngModel)]="name" placeholder="PRODUTO">
-        </div>
-        <div class="input-container">
-          <input type="text" class="input-field" [(ngModel)]="price" placeholder="VALOR">
-          <input type="text" class="input-field" [(ngModel)]="size" placeholder="TAMANHO">
-        </div>
-        <button class="buttonOKmodal" (click)="onOKButtonClick()">OK</button>
+  <div class="container02">
+    <h1>ESTO</h1>
+    <div class="container025">
+      <div class="a1">
+        <a href="/home"><img src="../../assets/img/casa.png" alt="" class="casa">
+          <p class="a01">HOME</p>
+        </a>
+      </div>
+      <div class="a1">
+        <a href="/home"><img src="../../assets/img/seta-do-carrinho-para-baixo.png" alt="" class="casa">
+          <p class="a01">COND</p>
+        </a>
+      </div>
+      <div class="a1">
+        <a href="/store"><img src="../../assets/img/caixa.png" alt="" class="casa">
+          <p class="a01">ESTO</p>
+        </a>
+      </div>
+      <div class="a1">
+        <a href="/customer "><img src="../../assets/img/do-utilizador.png" alt="" class="casa">
+          <p class="a01">CLIE</p>
+        </a>
+      </div>
+      <div class="a1">
+        <a href="/home"><img src="../../assets/img/lado-do-caminhao.png" alt="" class="casa">
+          <p class="a01">FORN</p>
+        </a>
+      </div>
+      <div class="a1">
+        <a href="/home"><img src="../../assets/img/saco-de-dolar.png" alt="" class="casa">
+          <p class="a01">FATU</p>
+        </a>
       </div>
     </div>
   </div>
-  
-  
+
+  <div class="container03" style="width: 100%;">
+    <button type="submit" id="openModalButton" (click)="abrirModal()" *ngIf="!modalVisible">
+      <img src="../../assets/img/adicionar.png" alt="adicionar">
+    </button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Tamanho</th>
+          <th>Quantidade</th> <!-- Adiciona uma coluna para exibir a quantidade de itens -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of storeData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>R$ {{ item.price }}</td>
+          <td>{{ item.size }}</td>
+          <td>{{ itemQuantities[item.id] || 0 }}</td> <!-- Exibe a quantidade de itens com base no ID -->
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td>R$ {{ totalPrice }}</td>
+          <td colspan="1"></td>
+          <td>{{ totalQuantity }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+<div *ngIf="modalVisible">
+  <div id="modal" class="modal" *ngIf="modalVisible">
+    <div class="modal-content">
+      <span class="close" id="closeModalButton" (click)="fecharModal()">
+        <img src="../../assets/img/adicionar.png" alt="Fechar">
+      </span>
+      <div class="input-container">
+        <input type="text" class="input-field" [(ngModel)]="nextId" placeholder="ID" [readonly]="true">
+        <input type="text" class="input-field" [(ngModel)]="name" placeholder="PRODUTO">
+      </div>
+      <div class="input-container">
+        <input type="text" class="input-field" [(ngModel)]="price" placeholder="VALOR">
+        <input type="text" class="input-field" [(ngModel)]="size" placeholder="TAMANHO">
+      </div>
+      <button class="buttonOKmodal" (click)="onOKButtonClick()">OK</button>
+    </div>
+  </div>
+</div>
