@@ -17,4 +17,9 @@ import { BASE_URL } from '../base-url';
         console.log(dados);
         return this.http.post(url, dados);
       }
+      getDadosDoCustomer(): Observable<any[]> {
+        return this.http.get<any[]>(`${this.baseUrl}/customer`);
+      }
   }
+
+  

@@ -115,7 +115,6 @@
   background: transparent;
   border: none;
   padding: 8px;
-  border-radius: 18px;
   cursor: pointer;
 }
 
@@ -131,7 +130,6 @@
   margin-top: 30px;
 
   /* background: #c0bfb7; */
-  border-radius: 8px;
   justify-content: center;
   display: flex;
 }
@@ -139,24 +137,54 @@
 /*////////////////////////////////////////*/
 /* Estilo para a tabela */
 table {
-
-  width: 90%;
+  width: 80%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-
 }
 
-/* Estilo para as células do cabeçalho */
-th {
-    color: white;
+/* Estilo para a célula do cabeçalho da coluna ID */
+th.col-id {
+  width: 10%;
+  color: white;
   background: #C9B133;
   text-align: left;
   padding: 8px;
   border: 1px solid #ab963b;
 }
 
-/* Estilo para as células dos dados */
+/* Estilo para a célula do cabeçalho da coluna Nome */
+th.col-nome {
+  width: 50%;
+  color: white;
+  background: #C9B133;
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ab963b;
+}
+
+/* Estilo para a célula do cabeçalho da coluna Preço */
+th.col-preco {
+  width: 20%;
+  color: white;
+  background: #C9B133;
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ab963b;
+}
+
+/* Estilo para a célula do cabeçalho da coluna Tamanho */
+th.col-tamanho {
+  width: 30%;
+  color: white;
+  background: #C9B133;
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ab963b;
+}
+
+/* Estilo para as células dos dados (todas com largura de 25%) */
 td {
+
   padding: 8px;
   border: 1px solid #ab963b;
 }
@@ -170,3 +198,165 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
   background-color: #cccccc;
 }
+
+/* Estilo para linhas ímpares */
+tr:nth-child(odd) {
+  background-color: #dcdcdc;
+}
+
+/* Estilo para linhas pares */
+tr:nth-child(even) {
+  background-color: #cccccc;
+}
+
+
+
+
+
+
+/* Estilo para os botões */
+button.td {
+  width: 100%;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.td.color {
+  background-color: #C9B133;
+}
+
+button.td.green {
+  background-color: #28a745;
+}
+
+button.td:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+/* Estilo para o botão "X" */
+button.remove-button {
+  padding: 5px 10px;
+  background-color: #dc3545; 
+  color: #fff; 
+  border: none; 
+  border-radius: 3px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+/* Estilo quando o mouse passa por cima do botão "X" */
+button.remove-button:hover {
+  background-color: #c82333;
+}
+
+
+
+.modal {
+  padding-left: 110px;
+  position: absolute; 
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: white;
+  width: 80%;
+  padding: 50px;
+  height: 50%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+  position: relative;
+}
+
+/* Estilo do botão "Fechar" */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+
+.close:hover {
+  color: #000; 
+}
+
+.campo-com-margem {
+  margin-top: 100px;
+}
+
+  label {
+    display: block;
+  }
+
+  input[type="number"], select {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+
+  .btnModal{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px; 
+  cursor: pointer; 
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 80px; 
+  height: 80px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px; 
+  height: 90px; 
+  pointer-events: none; /* Garante que o clique vá para o checkbox nativo */
+}
+
+  /* Torna o checkbox nativo visível quando o mouse está sobre ele */
+.custom-checkbox:hover input[type="checkbox"] {
+  /* opacity: 1;  */
+}
+
+/* Adicione margem entre as imagens*/
+.custom-checkbox + .custom-checkbox {
+  margin-left: 120px;
+}
+

@@ -36,21 +36,23 @@
         </div>
     </div>
     <div class="container03">
-        <form>
-            <input type="text" [(ngModel)]="searchId" name="searchId"  required>
-            <button type="button" (click)="onSubmit()"> <!-- Use (click) para chamar onSubmit() -->
+        <form autocomplete="off">
+            <input type="text" [(ngModel)]="searchId" name="searchId" required>
+            <button type="button" (click)="onSubmit()">
                 <img src="../../assets/img/busca.png" alt="Buscar">
             </button>
         </form>
+
 
         <div class="container04">
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th>Tamanho</th>
+                        <th class="col-id">ID</th>
+                        <th class="col-nome">Nome</th>
+                        <th class="col-preco">Preço</th>
+                        <th class="col-tamanho">Tamanho</th>
+                        <th class="col-tamanho"> X</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,32 +61,64 @@
                         <td>{{ result.name }}</td>
                         <td>{{ result.price }}</td>
                         <td>{{ result.size }}</td>
+                        <td><button class="remove-button" (click)="removeRow(result.id)">X</button></td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td><button class="td color">Cond</button></td>
+                        <td colspan="1"></td>
+                        <td>{{ totalPrice | number:'1.1-1' }}</td>
+                        <td><button class="td green" (click)="abrirModal()">Finalizar</button></td>
+                    </tr>
+                </tfoot>
             </table>
+
         </div>
-        
-        
-        <!-- <div class="container04">
-            <table>
-                <tr *ngFor="let item of searchResult; let isFirst = first">
-                    <td>ID: {{ item.id }}</td>
-                    <td>Nome: {{ item.name }}</td>
-                    <td>Preço: {{ item.price }}</td>
-                    <td>Tamanho: {{ item.size }}</td>
-                    <td *ngIf="isFirst">Resultado Atual</td>
-                </tr>
-                <tr *ngFor="let historyItem of searchHistory">
-                    <td>ID: {{ historyItem.id }}</td>
-                    <td>Nome: {{ historyItem.name }}</td>
-                    <td>Preço: {{ historyItem.price }}</td>
-                    <td>Tamanho: {{ historyItem.size }}</td>
-                    <td>Histórico</td>
-                </tr>
-            </table>
-        </div> -->
-        
-        
-        
+
+    </div>
+
+</div>
+<div *ngIf="modalVisible">
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="fecharModal()">&times;</span>
+            <h1>Valor Total: <strong>{{ totalPrice | number:'1.1-1' }}</strong></h1>
+
+            <label class="checkbox-container custom-checkbox">
+                <input type="checkbox" [checked]="exibirCampoDesconto" (change)="toggleDesconto()">
+                <img src="../../assets/img/dinheiro.png" alt="Custom Icon">
+            </label>
+
+            <label class="checkbox-container custom-checkbox">
+                <input type="checkbox" [checked]="exibirCampoCartao" (change)="toggleCartao()">
+                <img src="../../assets/img/cartao.png" alt="Custom Icon">
+            </label>
+
+            <label class="checkbox-container custom-checkbox">
+                <input type="checkbox" [checked]="exibirCampoCondi" (change)="toggleCondi()">
+                <img src="../../assets/img/sacola.png" alt="Custom Icon" style="width: 80px; height: 80px;">
+            </label>
+
+
+           <!-- Campo de desconto -->
+<div *ngIf="exibirCampoDesconto" class="campo-com-margem">
+    <label for="descontoInput">Informe o desconto (%):</label>
+    <input type="number" id="descontoInput" [(ngModel)]="desconto">
+    <button class="btnModal" (click)="aplicarDesconto()">Aplicar Desconto</button>
+</div>
+
+<!-- Campo de pagamento com cartão -->
+<div *ngIf="exibirCampoCartao" class="campo-com-margem">
+    <label for="parcelasInput">Selecione o número de parcelas:</label>
+    <select id="parcelasInput" [(ngModel)]="numeroParcelas">
+        <option value="1">1x</option>
+        <option value="2">2x</option>
+        <option value="3">3x</option>
+    </select>
+    <button class="btnModal" (click)="finalizarCompraCartao()">Finalizar Compra</button>
+</div>
+
+        </div>
     </div>
 </div>

@@ -38,7 +38,23 @@
     <div class="container03" style="width: 100%;">
         <button type="submit" id="openModalButton" (click)="abrirModal()" *ngIf="!modalVisible">
             <img src="../../assets/img/adicionar.png" alt="adicionar">
-        </button>    
+        </button>   
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Obs</th>
+                <th>Telefone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of CustomerData">
+                <td>{{ item.name }}</td>
+                <td>{{ item.obs }}</td>
+                <td>{{ item.phone }}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 </div>
 <div *ngIf="modalVisible">

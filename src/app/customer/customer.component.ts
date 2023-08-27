@@ -7,7 +7,10 @@ import { CustomerService } from '../service/customer.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+
   modalVisible: boolean = false;
+ CustomerData: any[] = [];
+
   name!: string;
   phone!: string;
   addres!: string;
@@ -18,7 +21,7 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
-
+    this.carregarCustomer();
   }
 
   abrirModal() {
@@ -46,6 +49,14 @@ export class CustomerComponent implements OnInit {
 
     this.customerService.enviarDadosClientePHP(dadosJSON).subscribe(response => {
       console.log("Resposta do servidor PHP:", response);
+    });
+  }
+
+  carregarCustomer() {
+    this.customerService.getDadosDoCustomer().subscribe(data => {
+      console.log(data);
+      this.CustomerData = data;
+      console.log("CustomerData:", this.CustomerData);
     });
   }
 }
