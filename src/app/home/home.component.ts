@@ -18,7 +18,9 @@ export class HomeComponent {
   exibirCampoCondi: boolean = false;
 
   desconto: number = 10;
-  numeroParcelas: number = 0;
+  descontoFinal: number = 0;
+
+  numeroParcelas: number = 1;
 
   constructor(private homeService: HomeService) { }
 
@@ -81,10 +83,15 @@ export class HomeComponent {
   }
 
   aplicarDesconto() {
-    // Lógica para aplicar o desconto aqui
+   this.descontoFinal = this.totalPrice * ( this.desconto / 100);
+   this.desconto = 0;
+   this.desconto = this.totalPrice - this.descontoFinal 
+   console.log(this.descontoFinal);
+   console.log(this.desconto);
+   return this.desconto;
   }
 
   finalizarCompraCartao() {
-    // Lógica para finalizar a compra com cartão aqui
+      
   }
 }
