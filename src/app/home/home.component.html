@@ -28,7 +28,7 @@
                 </a>
             </div>
             <div class="a1">
-                <a href="/home"><img src="../../assets/img/saco-de-dolar.png" alt="" class="casa">
+                <a href="/invoicing"><img src="../../assets/img/saco-de-dolar.png" alt="" class="casa">
                     <p class="a01">FATU</p>
                 </a>
 
@@ -101,12 +101,15 @@
             </label>
 
 
-           <!-- Campo de desconto -->
-<div *ngIf="exibirCampoDesconto" class="campo-com-margem">
-    <label for="descontoInput">Informe o desconto (%):</label>
-    <input type="number" id="descontoInput" [(ngModel)]="desconto">
-    <button class="btnModal" (click)="aplicarDesconto()">Aplicar Desconto</button>
-</div>
+           <div *ngIf="exibirCampoDesconto" class="campo-com-margem">
+            <div>
+                <label for="descontoInput">Informe o desconto (%):</label>
+                <input type="number" id="descontoInput" [(ngModel)]="desconto">
+                <button class="btnModal" (click)="aplicarDesconto()" [disabled]="descontoAplicado">Aplicar Desconto</button>
+            </div>
+            <button class="btnModalFinal" *ngIf="exibirCampoDesconto" (click)="excluirRegistros()">Finalizar</button>
+        </div>
+        
 
 <!-- Campo de pagamento com cartão -->
 <div *ngIf="exibirCampoCartao" class="campo-com-margem">
@@ -115,6 +118,8 @@
         <option value="1">1x</option>
         <option value="2">2x</option>
         <option value="3">3x</option>
+        <option value="3">4x</option>
+        <option value="3">5x</option>
     </select>
     <button class="btnModal" (click)="finalizarCompraCartao()">Finalizar Compra</button>
 </div>

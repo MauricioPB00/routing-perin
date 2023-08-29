@@ -20,7 +20,7 @@
 
 .container02 {
   width: 228px;
-  height: max-content;
+  height: 100%;
   flex-shrink: 0;
   background: #C9B133;
 }

@@ -16,4 +16,22 @@ export class HomeService {
     console.log(searchId);
     return this.http.get<any[]>(`${this.baseUrl}/search/${searchId}`);
   }
+  excluirRegistros(idsParaExcluir: number[]): Observable<any[]> {
+    console.log('chego no service');
+    const endpoint = `${this.baseUrl}/store/delete`;
+  
+    return this.http.delete<any[]>(endpoint, { body: { ids: idsParaExcluir } });
+  }
+  enviarDados(prices: number[], data: string, opcao: number): Observable<any> {
+    const endpoint = `${this.baseUrl}/store/save`; 
+
+    const body = {
+      prices: prices,
+      data: data,
+      opcao: opcao
+    };
+    console.log('body: ',body)
+
+    return this.http.post<any>(endpoint, body);
+  }
 }

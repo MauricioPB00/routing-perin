@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StoreComponent } from './store/store.component';
-import { CustomerComponent } from './customer/customer.component'; 
+import { CustomerComponent } from './customer/customer.component';
+import { InvoicingComponent } from './invoicing/invoicing.component'; 
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CustomerComponent } from './customer/customer.component';
     LoginComponent,
     HomeComponent,
     StoreComponent,
-    CustomerComponent
+    CustomerComponent,
+    InvoicingComponent,
   ],
   imports: [
     BrowserModule,
