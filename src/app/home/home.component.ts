@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   descontoAplicado: boolean = false;
   option: number = 0;
 
-  numeroParcelas: number = 1;
+  numeroParcelas: string = '';
 
   today: Date = new Date();
   dataFormatada: string = '';
@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.numeroParcelas);
     if (!this.searchId) {
       return;
     }
@@ -105,6 +106,30 @@ export class HomeComponent implements OnInit {
 
   finalizarCompraCartao() {
 
+    if (this.searchResults.length === 0) {
+      return;
+    }
+
+    const dataFormatada = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
+    const data = dataFormatada;
+    const pricesArray = this.searchResults.map(result => result.price);
+    const price = pricesArray.length > 0 ? pricesArray[0] : null; 
+  
+    const opcao = 2;
+
+    if (data !== null && price !== null) {
+      this.homeService.enviarDadosCartao(price, data, opcao, this.numeroParcelas).subscribe(
+        postResponse => {
+          console.log('Dados enviados com sucesso:', postResponse);
+          this.executarExclusao();
+        },
+        postError => {
+          console.error('Erro ao enviar dados:', postError);
+        }
+      );
+    } else {
+      console.error('A data ou o preço é nulo. Não é possível enviar dados.');
+    }
   }
 
   mostrarDataFormatada() {
@@ -128,7 +153,6 @@ export class HomeComponent implements OnInit {
       this.homeService.enviarDados(price, data, opcao).subscribe(
         postResponse => {
           console.log('Dados enviados com sucesso:', postResponse);
-          // Lógica adicional após o envio, se necessário
           this.executarExclusao();
         },
         postError => {
@@ -145,7 +169,6 @@ export class HomeComponent implements OnInit {
     this.homeService.excluirRegistros(idsParaExcluir).subscribe(
       deleteResponse => {
         console.log('Registros excluídos com sucesso:', deleteResponse);
-        // Lógica adicional após a exclusão, se necessário
       },
       deleteError => {
         console.error('Erro ao excluir registros:', deleteError);

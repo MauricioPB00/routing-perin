@@ -6,7 +6,7 @@
                     <div class="container06">
                         <img class="container07" src="../../assets/img/Perin.png">
                         <div class="login-formulario">
-                            <form (submit)="onSubmit()">
+                            <form (submit)="onSubmit()" autocomplete="off">
                                 <input type="text" id="username" name="username" [(ngModel)]="loginData.username" required>
                                 <input type="password" id="password" name="password" [(ngModel)]="loginData.password" required>
                                 <button type="submit" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">LOGAR</button>

@@ -28,7 +28,22 @@ export class HomeService {
     const body = {
       prices: prices,
       data: data,
-      opcao: opcao
+      opcao: opcao,
+    };
+    console.log('body: ',body)
+
+    return this.http.post<any>(endpoint, body);
+  }
+
+
+  enviarDadosCartao(prices: number[], data: string, opcao: number, numeroParcelas: string): Observable<any> {
+    const endpoint = `${this.baseUrl}/store/saveCard`; 
+
+    const body = {
+      prices: prices,
+      data: data,
+      opcao: opcao,
+      payment_option: numeroParcelas
     };
     console.log('body: ',body)
 
