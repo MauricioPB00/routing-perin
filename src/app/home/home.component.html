@@ -66,7 +66,7 @@
                 </tbody>
                 <tfoot>
                     <tr *ngIf="searchResults.length > 0">
-                        <td><button class="td color">Cond</button></td>
+                        <td colspan="1"></td>
                         <td colspan="1"></td>
                         <td>{{ totalPrice | number:'1.1-1' }}</td>
                         <td><button class="td green" (click)="abrirModal()">Finalizar</button></td>
@@ -86,7 +86,7 @@
 
             <label class="checkbox-container custom-checkbox">
                 <input type="checkbox" [checked]="exibirCampoDesconto" (change)="toggleDesconto()">
-                <img src="../../assets/img/dinheiro.png" alt="Custom Icon">
+                <img src="../../assets/img/dinheiro2.png" alt="Custom Icon">
             </label>
 
             <label class="checkbox-container custom-checkbox">
@@ -119,8 +119,8 @@
                     <option value="1">1x</option>
                     <option value="2">2x</option>
                     <option value="3">3x</option>
-                    <option value="3">4x</option>
-                    <option value="3">5x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
                 </select>
                 <button class="btnModal" (click)="finalizarCompraCartao()">Finalizar Compra</button>
             </div>

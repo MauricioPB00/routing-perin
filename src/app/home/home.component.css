@@ -277,7 +277,7 @@ button.remove-button:hover {
   background-color: white;
   width: 50%;
   padding: 50px;
-  height: 50%;
+  height: 30%;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
   position: relative;
@@ -335,6 +335,7 @@ button.remove-button:hover {
   background-color: #28a745; /* Cor de fundo verde */
   color: #fff; /* Cor do texto branco */
   padding: 10px 20px; /* Espaçamento interno */
+  width: 50%;
   border: none; /* Sem borda */
   border-radius: 3px; /* Borda arredondada */
   cursor: pointer;
@@ -345,6 +346,31 @@ button.remove-button:hover {
 .btnModalFinal:hover {
   background-color: #218838; /* Cor de fundo verde mais escura no hover */
 }
+#parcelasInput {
+  /* Estilos para o select */
+  width: 50%; /* Largura personalizada */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  cursor: pointer; /* Cursor no estilo mão ao passar o mouse */
+}
+
+/* Estilos para as opções dentro do select */
+#parcelasInput option {
+  background-color: #fff; /* Cor de fundo das opções */
+  color: #333; /* Cor do texto das opções */
+  font-size: 16px; /* Tamanho da fonte das opções */
+  padding: 5px 10px; /* Espaçamento interno das opções */
+}
+
+/* Estilizar as opções quando o select está em foco */
+#parcelasInput:focus option {
+  /* Estilos quando o select está em foco (selecionado) */
+  background-color: #007bff; /* Cor de fundo das opções quando em foco */
+  color: #fff; /* Cor do texto das opções quando em foco */
+}
+
 
 .custom-checkbox {
   position: relative;
