@@ -5,13 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { StoreComponent } from './store/store.component';
 import { CustomerComponent} from './customer/customer.component'
 import { InvoicingComponent } from './invoicing/invoicing.component';
+import { CondiComponent} from './condi/condi.component'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent},
   { path: 'store', component: StoreComponent},
   { path: 'customer', component: CustomerComponent},
-  { path: 'invoicing', component: InvoicingComponent}
+  { path: 'invoicing', component: InvoicingComponent},
+  { path: 'condi', component: CondiComponent},
 ];
 
 @NgModule({

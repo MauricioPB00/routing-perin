@@ -25,9 +25,12 @@ export class HomeComponent implements OnInit {
   option: number = 0;
 
   numeroParcelas: string = '';
+  numeroParcelass: string = '';
 
   today: Date = new Date();
-  dataFormatada: string = '';
+
+  condiInput: string = '';
+
 
   constructor(private homeService: HomeService, private datePipe: DatePipe) { }
 
@@ -114,7 +117,6 @@ export class HomeComponent implements OnInit {
     const data = dataFormatada;
     const pricesArray = this.searchResults.map(result => result.price);
     const price = pricesArray.length > 0 ? pricesArray[0] : null; 
-  
     const opcao = 2;
 
     if (data !== null && price !== null) {
@@ -140,7 +142,7 @@ export class HomeComponent implements OnInit {
     if (this.searchResults.length === 0) {
       return;
     }
-  
+
     const dataFormatada = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
     const data = dataFormatada;
   
@@ -148,9 +150,9 @@ export class HomeComponent implements OnInit {
     const price = pricesArray.length > 0 ? pricesArray[0] : null; 
   
     const opcao = 1;
-  
+    const numeroParcelass: string = '0';
     if (data !== null && price !== null) {
-      this.homeService.enviarDados(price, data, opcao).subscribe(
+      this.homeService.enviarDados(price, data, opcao, numeroParcelass).subscribe(
         postResponse => {
           console.log('Dados enviados com sucesso:', postResponse);
           this.executarExclusao();
@@ -174,6 +176,9 @@ export class HomeComponent implements OnInit {
         console.error('Erro ao excluir registros:', deleteError);
       }
     );
+  }
+  condi(){
+    console.log(this.condiInput);
   }
 
 }

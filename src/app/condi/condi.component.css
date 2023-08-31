@@ -1,0 +1,80 @@
+@font-face {
+    font-family: RADIO;
+    src: url(../../assets/RADIO.otf);
+    font-family: LEAGUE;
+    src: url(../../assets/LeagueSpartan-Bold.otf);
+    font-family: OSWALD;
+    src: url(../../assets/Oswald-VariableFont_wght.ttf);
+    /* font-family: SIMP;
+      src: url(../../assets/SimplyMono-Bold.ttf);
+      font-family: MONSTER;
+      src: url(../../assets/Montserrat-Bold.otf); */
+  }
+  
+  
+  .container01 {
+    display: flex;
+    background: #CDCDCD;
+    height: 100vh;
+  }
+  
+  .container02 {
+    width: 228px;
+    height: 100%;
+    flex-shrink: 0;
+    background: #C9B133;
+  }
+  
+  .container02 h1 {
+    color: #FFF;
+    font-family: OSWALD;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+  
+  .container025 {
+    width: 228px;
+    height: 1080px;
+    flex-shrink: 0;
+    margin-top: 120px;
+  }
+  
+  .container025 a {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-decoration: none;
+  }
+  
+  .container025 p {
+    color: #FFF;
+    font-family: OSWALD;
+    font-size: 25px;
+    padding-right: 10px;
+  
+  }
+  
+  .a1 {
+    margin-left: 40px;
+    display: flex;
+    margin-bottom: -10px;
+  }
+  
+  .a01 {
+    margin-left: 10px;
+  }
+  
+  .casa {
+    margin-top: 30px;
+    width: 14%;
+    height: 100%;
+    margin-left: 15px;
+    filter: invert(100%);
+  }
+  

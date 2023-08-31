@@ -339,7 +339,6 @@ button.remove-button:hover {
   border: none; /* Sem borda */
   border-radius: 3px; /* Borda arredondada */
   cursor: pointer;
-  margin-left: 20px;
   margin-top: 10px; /* Margem superior para separar do conteúdo acima */
 }
 
@@ -369,6 +368,16 @@ button.remove-button:hover {
   /* Estilos quando o select está em foco (selecionado) */
   background-color: #007bff; /* Cor de fundo das opções quando em foco */
   color: #fff; /* Cor do texto das opções quando em foco */
+}
+
+
+#condiInput {
+  /* Estilos para o select */
+  width: 60%; /* Largura personalizada */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 3px;
 }
 
 

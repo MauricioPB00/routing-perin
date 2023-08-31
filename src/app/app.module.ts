@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StoreComponent } from './store/store.component';
 import { CustomerComponent } from './customer/customer.component';
-import { InvoicingComponent } from './invoicing/invoicing.component'; 
+import { InvoicingComponent } from './invoicing/invoicing.component';
+import { CondiComponent } from './condi/condi.component'; 
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { InvoicingComponent } from './invoicing/invoicing.component';
     StoreComponent,
     CustomerComponent,
     InvoicingComponent,
+    CondiComponent,
   ],
   imports: [
     BrowserModule,

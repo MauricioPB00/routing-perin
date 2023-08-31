@@ -22,13 +22,14 @@ export class HomeService {
   
     return this.http.delete<any[]>(endpoint, { body: { ids: idsParaExcluir } });
   }
-  enviarDados(prices: number[], data: string, opcao: number): Observable<any> {
+  enviarDados(prices: number[], data: string, opcao: number, numeroParcelas: string): Observable<any> {
     const endpoint = `${this.baseUrl}/store/save`; 
 
     const body = {
       prices: prices,
       data: data,
       opcao: opcao,
+      payment_option: numeroParcelas,
     };
     console.log('body: ',body)
 
@@ -36,14 +37,14 @@ export class HomeService {
   }
 
 
-  enviarDadosCartao(prices: number[], data: string, opcao: number, numeroParcelas: string): Observable<any> {
+  enviarDadosCartao(prices: number[], data: string, opcao: number, numeroParcelass: string): Observable<any> {
     const endpoint = `${this.baseUrl}/store/saveCard`; 
 
     const body = {
       prices: prices,
       data: data,
       opcao: opcao,
-      payment_option: numeroParcelas
+      payment_option: numeroParcelass
     };
     console.log('body: ',body)
 
