@@ -165,6 +165,8 @@ export class HomeComponent implements OnInit {
       console.error('A data ou o preço é nulo. Não é possível enviar dados.');
     }
   }
+
+
   
   executarExclusao() {
     const idsParaExcluir = this.searchResults.map(result => result.id);
@@ -177,8 +179,38 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-  condi(){
+
+
+
+  condi() {
     console.log(this.condiInput);
+  
+    if (this.searchResults.length === 0) {
+      return;
+    }
+  
+    const dataFormatada = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
+    const data = dataFormatada;
+  
+    const pricesArray = this.searchResults.map(result => result.price);
+    const sizesArray = this.searchResults.map(result => result.size);
+    const idsArray = this.searchResults.map(result => result.id);
+  
+    console.log(data, pricesArray, sizesArray, idsArray);
+  
+    if (data !== null && pricesArray.length > 0) {
+      this.homeService.enviarDadosCondi(pricesArray, data, this.condiInput, idsArray, sizesArray).subscribe(
+        postResponse => {
+          console.log('Dados enviados com sucesso:', postResponse);
+        },
+        postError => {
+          console.error('Erro ao enviar dados:', postError);
+        }
+      );
+    } else {
+      console.error('A data ou o preço é nulo. Não é possível enviar dados.');
+    }
   }
+  
 
 }

@@ -50,4 +50,18 @@ export class HomeService {
 
     return this.http.post<any>(endpoint, body);
   }
+
+  enviarDadosCondi(prices: number[],data: string, condiInput: string, ids: number[], size: string[ ] ){
+    const endpoint = `${this.baseUrl}/condi/saveCondi`; 
+
+    const body = {
+      prices: prices,
+      data: data,
+      condiInput: condiInput,
+      ids: ids,
+      size: size,
+    };
+    console.log('body: ',body)
+    return this.http.post<any>(endpoint, body);
+  }
 }

@@ -36,25 +36,55 @@
     </div>
   
     <div class="container03" style="width: 100%;">
-      <!-- <table class="table">
+      <table class="table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nome</th>
             <th>Preço</th>
-            <th>Tamanho</th>
-            <th>Quantidade</th> 
+            <th>Data</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of storeData">
-            <td>{{ item.id }}</td>
+          <tr *ngFor="let item of summedData">
             <td>{{ item.name }}</td>
-            <td>R$ {{ item.price }}</td>
-            <td>{{ item.size }}</td>
-            <td>{{ itemQuantities[item.id] || 0 }}</td>
+            <td>{{ item.totalPrice }}</td>
+            <td>{{ getDataByNome(item.name) }}</td>
+            <td>
+              <button (click)="openModal(item.name)">Abrir Modal</button>
+            </td>
           </tr>
         </tbody>
-      </table> -->
+      </table>
+    </div>
+    
+    
+  </div>
+
+  <div class="modal" id="myModal" *ngIf="modalName">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Dados para: {{ modalName }}</h2>
+      <table *ngIf="getItemsByNome(modalName).length > 0">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Data</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of getItemsByNome(modalName); let i = index">
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.date }}</td>
+            <td>
+              <button (click)="removeItem(i)">Remover</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="getItemsByNome(modalName).length === 0">Nenhum dado disponível para este nome.</p>
     </div>
   </div>
