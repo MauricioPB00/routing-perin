@@ -26,6 +26,8 @@ export class CondiComponent implements OnInit {
   modalName: string | null = null; 
   modalVisible: boolean = false; 
 
+  deletedItems: any[] = [];
+
   constructor(private condiService: CondiService) { }
 
   ngOnInit() {
@@ -52,14 +54,24 @@ export class CondiComponent implements OnInit {
     // Filtrar os itens por nome
     return this.CondiData.filter(item => item.name === name);
   }
-
   removeItem(index: number) {
-    if (index >= 0 && index < this.CondiData.length) {
-      this.CondiData.splice(index, 1); // Remove o item da matriz CondiData
-      // Atualize a variável CondiData para refletir a remoção
-      this.CondiData = [...this.CondiData]; // Isso pode ajudar a forçar a atualização
+    if (this.modalName) {
+      const items = this.getItemsByNome(this.modalName);
+      if (index >= 0 && index < items.length) {
+        const itemToRemove = items[index];
+        
+        // Remove o item da matriz CondiData
+        this.CondiData.splice(this.CondiData.indexOf(itemToRemove), 1);
+  
+        // Adiciona o item removido à matriz deletedItems
+        this.deletedItems.push(itemToRemove);
+  
+        // Atualize a variável CondiData para refletir a remoção
+        this.CondiData = [...this.CondiData];
+      }
     }
   }
+  
 
 
   carregaCondi() {
