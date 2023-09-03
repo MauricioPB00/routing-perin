@@ -107,5 +107,6 @@ export class CondiComponent implements OnInit {
       name: name,
       totalPrice: groupedData[name]
     }));
+    
   }
 }
