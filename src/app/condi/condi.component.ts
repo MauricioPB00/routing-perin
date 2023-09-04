@@ -86,7 +86,6 @@ export class CondiComponent implements OnInit {
     const item = this.CondiData.find(data => data.name === nome);
     return item ? item.date : '';
   }
-
   sumData() {
     const groupedData: { [key: string]: number } = {};
 
