@@ -23,8 +23,8 @@ interface SummedItem {
 export class CondiComponent implements OnInit {
   CondiData: CondiItem[] = [];
   summedData: SummedItem[] = [];
-  modalName: string | null = null; 
-  modalVisible: boolean = false; 
+  modalName: string | null = null;
+  modalVisible: boolean = false;
 
   deletedItems: any[] = [];
 
@@ -51,48 +51,61 @@ export class CondiComponent implements OnInit {
   }
 
   getItemsByNome(name: string): CondiItem[] {
-    // Filtrar os itens por nome
     return this.CondiData.filter(item => item.name === name);
   }
   removeItem(index: number) {
     if (this.modalName) {
-      const items = this.getItemsByNome(this.modalName);
+      console.log(this.modalName)
+      var items = this.getItemsByNome(this.modalName);
+
       if (index >= 0 && index < items.length) {
-        const itemToRemove = items[index];
-        
-        // Remove o item da matriz CondiData
+        var itemToRemove = items[index];
+
         this.CondiData.splice(this.CondiData.indexOf(itemToRemove), 1);
-  
-        // Adiciona o item removido à matriz deletedItems
-        this.deletedItems.push(itemToRemove);
-  
-        // Atualize a variável CondiData para refletir a remoção
         this.CondiData = [...this.CondiData];
+
+        items.splice(items.indexOf(itemToRemove), 1);
+        this.deletedItems.push(itemToRemove);
+        items = [...items];
+
+        console.log("delete", this.deletedItems);
       }
     }
   }
-  
-
 
   carregaCondi() {
     this.condiService.getDadosDoCondi().subscribe((data: CondiItem[]) => {
       this.CondiData = data;
+      console.log(this.CondiData)
       this.sumData();
+      this.formatarDatas();
+
     });
+  }
+  formatarDatas() {
+    for (const item of this.CondiData) {
+      const date = new Date(item.date);
+      item.date = this.formatarData(date);
+    }
+  }
+
+  formatarData(data: Date): string {
+    const dia = data.getDate().toString().padStart(2, '0');
+    const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+    const ano = data.getFullYear().toString().slice(-2);
+    return `${dia}/${mes}/${ano}`;
   }
 
   getDataByNome(nome: string): string {
-    // Procure o item correspondente em CondiData e retorne a data
     const item = this.CondiData.find(data => data.name === nome);
     return item ? item.date : '';
   }
   sumData() {
     const groupedData: { [key: string]: number } = {};
 
-    // Agrupe os objetos por 'name' e some os 'prices'
     this.CondiData.forEach((item: CondiItem) => {
       const name = item.name;
-      const price = parseFloat(item.price); // Converter o preço para número
+      const price = parseFloat(item.price); 
 
       if (groupedData[name]) {
         groupedData[name] += price;
@@ -101,11 +114,10 @@ export class CondiComponent implements OnInit {
       }
     });
 
-    // Converta o objeto agrupado de volta para um array
     this.summedData = Object.keys(groupedData).map((name: string) => ({
       name: name,
       totalPrice: groupedData[name]
     }));
-    
+
   }
 }

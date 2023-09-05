@@ -64,11 +64,11 @@
   <div class="modal" id="myModal" *ngIf="modalName">
     <div class="modal-content">
       <span class="close" (click)="closeModal()">&times;</span>
-      <h2>Dados para: {{ modalName }}</h2>
-      <table *ngIf="getItemsByNome(modalName).length > 0">
+      <h1>Condicional: {{ modalName }}</h1>
+      <table class="tableModal" *ngIf="getItemsByNome(modalName).length > 0">
         <thead>
           <tr>
-            <th>Nome</th>
+            <th>ID</th>
             <th>Preço</th>
             <th>Data</th>
             <th>Ações</th>
@@ -76,7 +76,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of getItemsByNome(modalName); let i = index">
-            <td>{{ item.name }}</td>
+            <td>{{ item.idStore}}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.date }}</td>
             <td>
@@ -85,6 +85,8 @@
           </tr>
         </tbody>
       </table>
+      <button class="btnCondi">Condicional</button>
+      <button class="btnCondiPagar">Pagamento</button>
       <p *ngIf="getItemsByNome(modalName).length === 0">Nenhum dado disponível para este nome.</p>
     </div>
   </div>

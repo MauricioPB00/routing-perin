@@ -145,10 +145,10 @@
 
 /* Conteúdo do modal */
 .modal-content {
-  background-color: #fff;
-  margin: 15% auto;
+  background-color: #d9d9d9;
+  margin: 5% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #c1c1c1;
   width: 80%;
   max-width: 600px;
   position: relative;
@@ -163,14 +163,33 @@
   cursor: pointer;
 }
 
-/* Estilo para a lista dentro do modal */
-.modal-content ul {
-  list-style-type: none;
-  padding: 0;
+.modal-content th{
+  font-size: 22px;
+  background-color: #c5c5c5;
 }
-
-/* Estilo para os itens da lista */
-.modal-content li {
-  margin-bottom: 10px;
+.modal-content td{
+  background-color: #dedede;
+  font-size: 20px;
+  text-align: center;
 }
-
+.tableModal{
+  background-color: #d2d2d2;
+  width: 100%;
+}
+.btnCondi{
+  margin-top: 20px;
+  color: white;
+  background-color: orange;
+  width: 43%;
+  padding: 6px;
+  border: none;
+}
+.btnCondiPagar{
+  margin-top: 20px;
+  color: white;
+  background-color: green;
+  width: 43%;
+  padding: 6px;
+  border: none;
+margin-left: 14%;
+}
