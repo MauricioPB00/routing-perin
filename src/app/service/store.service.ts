@@ -17,8 +17,6 @@ export class StoreService {
 
   enviarDadosParaPHP(dados: any): Observable<any> {
     const url = `${this.baseUrl}/store`;
-    console.log('aaaaa');
-    console.log(dados);
     return this.http.post(url, dados);
   }
 }
