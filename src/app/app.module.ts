@@ -13,6 +13,7 @@ import { StoreComponent } from './store/store.component';
 import { CustomerComponent } from './customer/customer.component';
 import { InvoicingComponent } from './invoicing/invoicing.component';
 import { CondiComponent } from './condi/condi.component'; 
+import { CustomElement} from './customelement.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CondiComponent } from './condi/condi.component';
     CustomerComponent,
     InvoicingComponent,
     CondiComponent,
+    CustomElement,
   ],
   imports: [
     BrowserModule,
